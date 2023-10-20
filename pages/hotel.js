@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Home from '@/components/CountrySideTheme/Home';
 import About from '@/components/CountrySideTheme/About';
 import Photos from '@/components/CountrySideTheme/Photos';
+import Rooms from '@/components/CountrySideTheme/Rooms';
 
 
 
@@ -72,6 +73,12 @@ function Hotel() {
             <Photos
                 allHotelDetails={allHotelDetails}
                 hotelDetailLoader={hotelDetailLoader}
+            />
+
+            <Rooms
+                allHotelDetails={allHotelDetails}
+                rooms={rooms}
+                roomDetailLoader={roomDetailLoader}
             />
 
 
