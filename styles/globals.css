@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +25,47 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+.bg-custom-brown{
+  background-color: #EAE7E3;
+}
+.hover\:bg-custom-hover-brown:hover {
+  background-color:  #EAE7E3;
+}
+.border-custom-yellow{
+  border-color: #B99D75;
+}
+.bg-custom-yellow{
+  background-color: #B99D75;
+}
+.bg-custom-dark-green{
+  background-color: #1F2E20 ;
+}
+.dark-green{
+  color:#1F2E20 ;
+}
+
+
+.font-family-jost-regular{
+  font-family: 'Jost', sans-serif;
+}
+.font-family-marcellus{
+  font-family: 'Marcellus', serif;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+      /* transform: translateX(-100%); */
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      /* transform: translateX(0); */
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromBottom 2s ease-in-out forwards;
 }
