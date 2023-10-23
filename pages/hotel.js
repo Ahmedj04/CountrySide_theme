@@ -1,18 +1,26 @@
 import Header from '@/components/CountrySideTheme/Header';
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import axios, { all } from 'axios';
 
 import { AiOutlineClose } from "react-icons/ai";
 import Home from '@/components/CountrySideTheme/Home';
 import About from '@/components/CountrySideTheme/About';
 import Photos from '@/components/CountrySideTheme/Photos';
 import Rooms from '@/components/CountrySideTheme/Rooms';
+import Services from '@/components/CountrySideTheme/Services';
+import CarousalComponent from '@/components/CountrySideTheme/CarousalComponent';
+import Footer from '@/components/CountrySideTheme/Footer';
 
 
 
 function Hotel() {
     const [allHotelDetails, setHotelDetails] = useState([]);
     const [rooms, setRooms] = useState([]);
+
+    const [showRoom, setShowRoom] = useState({
+        'visible': 0,
+        'index': undefined,
+    });
 
     // loaders
     const [hotelDetailLoader, setHotelDetailLoader] = useState(0);
@@ -79,7 +87,28 @@ function Hotel() {
                 allHotelDetails={allHotelDetails}
                 rooms={rooms}
                 roomDetailLoader={roomDetailLoader}
+                showRoom={showRoom}
+                setShowRoom={(e) => setShowRoom(e)}
             />
+
+            <Services
+                allHotelDetails={allHotelDetails}
+                hotelDetailLoader={hotelDetailLoader}
+            />
+
+            <CarousalComponent
+                id="reviews"
+                type='review'
+                data={allHotelDetails?.Reviews}
+                title="What They Say About Us"
+                subtitle="FEEDBACK FROM OUR DEAR CLIENTS"
+                hotelDetailLoader={hotelDetailLoader}
+            />
+
+            <Footer
+                allHotelDetails={allHotelDetails}
+            />
+
 
 
 
@@ -91,14 +120,14 @@ function Hotel() {
                 {/* Content */}
                 <div className={`absolute inset-y-0 left-0 w-8/12 bg-custom-brown p-4 transform transition-transform duration-1000 ease-in-out ${menu === 1 ? 'translate-x-0 delay-300' : '-translate-x-full'}`}>
                     <div className='flex justify-between'>
-                        <div className='border border-black inline-block'>
-                            <p className='px-2 py-2 text-base font-medium uppercase'>{allHotelDetails.property_name}</p>
+                        <div className=' inline-block'>
+                            <p className=' py-2 text-lg font-medium uppercase font-family-marcellus'>{allHotelDetails.property_name}</p>
                         </div>
                         <button onClick={() => setMenu(0)}><AiOutlineClose /></button>
                     </div>
 
                     <div>
-                        <ul className='pt-10 text-lg' onClick={() => setMenu(0)}>
+                        <ul className='pt-5 font-family-jost-regular' onClick={() => setMenu(0)}>
                             <li className='pb-2'><a href='#about'>About</a></li>
                             <li className='pb-2'><a href='#rooms'>Rooms</a></li>
                             <li className='pb-2'><a href='#photos'>Gallery</a></li>

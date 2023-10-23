@@ -3,6 +3,7 @@ import { IoIosMenu } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
 import StarRatings from 'react-star-ratings';
+import ContactUsModal from '../Modals/ContactUsModal';
 
 // import ContactUsModal from '../Modals/ContactUsModal';
 import Loader from '../Loaders/Loader';
@@ -61,7 +62,7 @@ function Header({ allHotelDetails, hotelDetailLoader, setMenu }) {
                         <span className='my-auto'><CiMail /></span>
                         <span className='ml-2 text-sm'
                             onClick={() => {
-                                // setShowModalContactUs(1)
+                                setShowModalContactUs(1)
                             }}> CONTACT</span>
                     </div>
 
@@ -77,11 +78,11 @@ function Header({ allHotelDetails, hotelDetailLoader, setMenu }) {
 
 
             {/* modal for contact us*/}
-            {/* <div className={showModalContactUs === 1 ? "block" : "hidden"}>
+            <div className={showModalContactUs === 1 ? "block" : "hidden"}>
                 <ContactUsModal
                     setShowModalContactUs={setShowModalContactUs}
                 />
-            </div> */}
+            </div>
 
 
 
