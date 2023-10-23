@@ -36,7 +36,7 @@ function Rooms({ allHotelDetails, rooms, roomDetailLoader, showRoom, setShowRoom
                             </div>
                             <h3 className='mt-5 font-family-marcellus text-center text-white text-4xl lg:text-5xl'>Select Your Cozy Room</h3>
 
-                            {roomDetailLoader === 0 ? <Loader size={`w-full mt-5 h-24 py-3 mb-5 `} /> :
+                            {roomDetailLoader === 0 ? <Loader size={`w-full mt-5 h-72 py-3 mb-5 `} /> :
 
                                 <div className='mt-10'>
                                     <Carousel cols={1} rows={1} gap={10} loop={false}
