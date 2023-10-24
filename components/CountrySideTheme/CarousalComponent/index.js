@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 
 function CarousalComponent({ type = 'review', data = [], title, subtitle, id, hotelDetailLoader }) {
     return (
-        <section id={id} className={`px-5 py-20 md:py-24 ${type === 'room' ? '' : 'bg-custom-brown'}`}>
+        <section id={id} className={`px-5 py-10 ${type === 'room' ? '' : 'bg-custom-brown'}`}>
 
             <div>
 
@@ -36,7 +36,7 @@ function CarousalComponent({ type = 'review', data = [], title, subtitle, id, ho
                                 },
                                 {
                                     breakpoint: 810,
-                                    cols: 2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: type === 'review' ? 20 : 10,
                                     loop: true,
@@ -94,7 +94,7 @@ function CarousalComponent({ type = 'review', data = [], title, subtitle, id, ho
                 }
                 @media (min-width: 700px) {
                     .carousel-img{
-                        height:35rem;
+                        height:30rem;
                     }
                 }
                 `}

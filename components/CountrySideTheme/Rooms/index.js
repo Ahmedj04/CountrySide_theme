@@ -28,7 +28,7 @@ function Rooms({ allHotelDetails, rooms, roomDetailLoader, showRoom, setShowRoom
     return (
         <section id='rooms' className='bg-custom-dark-green'>
             <div ref={ref} className={`pt-28 ${inView ? 'animate-slide-in' : 'opacity-0'}`}>
-                <div className='px-8 lg:px-20'>
+                <div className='px-2 md:px-5 lg:px-20'>
                     <div className='pb-10'>
                         <div className='lg:mx-0'>
                             <div className='text-center'>
@@ -116,7 +116,7 @@ function Rooms({ allHotelDetails, rooms, roomDetailLoader, showRoom, setShowRoom
                                     </Carousel>
 
                                     {selectedRoom.length != 0 ?
-                                        <div className=" md:-mx-auto mt-8 pt-5 mb-10 rounded shadow-lg bg-custom-brown">
+                                        <div className=" md:mx-auto mt-8 pt-5 mb-10 rounded shadow-lg bg-custom-brown">
 
                                             <div className="flex justify-between px-5 pb-10">
                                                 <p className=' font-semibold tracking-wide text-center md:text-2xl font-family-marcellus dark-green'>{selectedRoom?.room_name} - ({selectedRoom?.room_type?.replaceAll("_", " ")})</p>
@@ -146,11 +146,14 @@ function Rooms({ allHotelDetails, rooms, roomDetailLoader, showRoom, setShowRoom
                                                 : <></>}
                                         </div> : <></>
                                     }
+
+
                                 </div>
                             }
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <style jsx>
