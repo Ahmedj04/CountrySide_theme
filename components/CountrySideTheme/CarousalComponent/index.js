@@ -24,7 +24,7 @@ function CarousalComponent({ type = 'review', data = [], title, subtitle, id, ho
                 {hotelDetailLoader === 0 ?
                     <Loader size={`w-full h-56 md:h-64 rounded-lg`} /> :
                     <div className='md:px-5 lg:px-10'>
-                        <Carousel cols={1} rows={1} gap={10} autoPlay={false} loop={true}
+                        <Carousel cols={type === 'review' ? 3 : 1} rows={1} gap={10} autoPlay={false} loop={true}
                             responsiveLayout={[
                                 {
                                     breakpoint: 480,
