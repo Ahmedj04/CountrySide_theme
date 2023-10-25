@@ -63,7 +63,7 @@ function Header({ allHotelDetails, hotelDetailLoader, setMenu }) {
                         <span className='ml-2 text-sm'
                             onClick={() => {
                                 setShowModalContactUs(1)
-                            }}> CONTACT</span>
+                            }}> CONTACT US</span>
                     </div>
 
                     <div className='book-now flex ml-5 md:mr-10'>

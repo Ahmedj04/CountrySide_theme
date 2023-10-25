@@ -33,9 +33,9 @@ function Home({ allHotelDetails, hotelDetailLoader, setMenu }) {
                             <div>
                                 <p className='text-white text-sm font-bold tracking-wider font-family-jost-regular'>BEST PLACE FOR RELAX</p>
                                 <h1 className='mt-5 animate-slide-in text-white text-4xl  md:text-5xl lg:text-7xl md:leading-relaxed font-light font-family-marcellus'>Perfect Countryside Vacation at {allHotelDetails?.property_name}</h1>
-                                <div className='pt-5'>
+                                {/* <div className='pt-5'>
                                     <p className='content-div-discription animate-slide-in text-base leading-relaxed md:text-lg font-medium text-slate-100 tracking-wider font-family-jost-regular'>Nestled in Napa Valley, CozyStay Lodge is a luxury boutique hotel in the heart of wine country, conveniently located in the historic Napa Mill neighbourhood, just steps from some of the best wineries and restaurants.</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
