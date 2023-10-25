@@ -1,15 +1,22 @@
 import React from 'react';
 import icon from '../../GlobalData'
 import Loader from '../Loaders/Loader';
+import { useInView } from 'react-intersection-observer';
 
 function Services({ allHotelDetails, hotelDetailLoader }) {
 
     let i = 0;
     const filteredAdditionalService = allHotelDetails?.additional_services?.filter(service => service.status);
 
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.1,    // Trigger animation when 10% of the element is in view
+    });
+
+
     return (
         <section id='services' className="px-8 pt-20 bg-custom-brown">
-            <div>
+            <div ref={ref} className={`${inView ? 'animate-slide-in' : 'opacity-0'}`}>
                 <div className='mb-5'>
                     <h2 className="text-sm md:text-center font-medium font-family-jost-regular dark-green">DISCOVER THE SERVICES WE OFFERED</h2>
                     <h2 className="mt-5 md:text-center text-4xl md:text-5xl font-medium font-family-marcellus ">Chalets With All the Benefits of a Hotel</h2>
@@ -191,9 +198,8 @@ function Services({ allHotelDetails, hotelDetailLoader }) {
                     </div>
                 }
 
-                <div className='py-5'>
-                    <h2 className="text-center text-4xl md:text-5xl font-family-marcellus ">Extra Benefits</h2>
-
+                <div className='pt-10 pb-14'>
+                    <h2 className="text-center text-4xl md:text-5xl font-family-marcellus ">Key Highlights</h2>
                     <div className='grid grid-flow-row-dense grid-col-2 md:grid-cols-3 text-center pt-10 pb-0 md:py-10'>
                         {filteredAdditionalService?.map((service) => {
                             return <div key={service.add_service_id} className="mb-5">
@@ -202,8 +208,6 @@ function Services({ allHotelDetails, hotelDetailLoader }) {
                             </div>
                         })}
                     </div>
-
-
                 </div>
 
 

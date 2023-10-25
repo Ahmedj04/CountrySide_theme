@@ -98,6 +98,7 @@ function Hotel() {
                 hotelDetailLoader={hotelDetailLoader}
             />
 
+            {/* for review section */}
             <CarousalComponent
                 id="reviews"
                 type='review'

@@ -2,13 +2,21 @@ import React from 'react'
 import Carousel from 'better-react-carousel';
 import Loader from '../Loaders/Loader';
 import StarRatings from 'react-star-ratings';
+import { useInView } from 'react-intersection-observer';
+
 
 
 function CarousalComponent({ type = 'review', data = [], title, subtitle, id, hotelDetailLoader }) {
+
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.1,    // Trigger animation when 10% of the element is in view
+    });
+
     return (
         <section id={id} className={`px-5 py-10 ${type === 'room' ? '' : 'bg-custom-brown'}`}>
 
-            <div>
+            <div ref={ref} className={`${type === 'review' ? inView ? 'animate-slide-in' : 'opacity-0' : ''}`}>
 
                 {subtitle ?
                     <div className='text-center mb-5 px-5'>
