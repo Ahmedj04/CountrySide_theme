@@ -12,8 +12,8 @@ function Footer({ allHotelDetails }) {
     const [showModalPrivacy, setShowModalPrivacy] = useState(0);
     const [showModalContactUs, setShowModalContactUs] = useState(0);
 
-
     let date = new Date();
+
     return (
         <footer className='bg-custom-dark-green'>
             <div className='py-12 px-5 lg:px-24 text-white'>
@@ -109,7 +109,7 @@ function Footer({ allHotelDetails }) {
             <div className={showModalTC === 1 ? "block" : "hidden"}>
                 <Modal
                     title={`Terms & Conditions`}
-                    description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+                    description={allHotelDetails?.privacy_conditions?.[0].terms_condition}
                     setShowModal={(e) => setShowModalTC(e)}
                 />
             </div>
@@ -117,7 +117,7 @@ function Footer({ allHotelDetails }) {
             <div className={showModalPrivacy === 1 ? "block" : "hidden"}>
                 <Modal
                     title={`Privacy Policy`}
-                    description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+                    description={allHotelDetails?.privacy_conditions?.[0].privacy_policy}
                     setShowModal={(e) => setShowModalPrivacy(e)}
                 />
             </div>

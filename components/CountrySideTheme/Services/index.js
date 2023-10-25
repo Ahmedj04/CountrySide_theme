@@ -3,7 +3,9 @@ import icon from '../../GlobalData'
 import Loader from '../Loaders/Loader';
 
 function Services({ allHotelDetails, hotelDetailLoader }) {
+
     let i = 0;
+    const filteredAdditionalService = allHotelDetails?.additional_services?.filter(service => service.status);
 
     return (
         <section id='services' className="px-8 pt-20 bg-custom-brown">
@@ -188,6 +190,22 @@ function Services({ allHotelDetails, hotelDetailLoader }) {
 
                     </div>
                 }
+
+                <div className='py-5'>
+                    <h2 className="text-center text-4xl md:text-5xl font-family-marcellus ">Extra Benefits</h2>
+
+                    <div className='grid grid-flow-row-dense grid-col-2 md:grid-cols-3 text-center pt-10 pb-0 md:py-10'>
+                        {filteredAdditionalService?.map((service) => {
+                            return <div key={service.add_service_id} className="mb-5">
+                                <p className="font-semibold text-lg md:text-xl font-family-marcellus">{service.add_service_name}</p>
+                                <p className='text-sm dark-green  font-family-jost-regular'>{service.add_service_comment}</p>
+                            </div>
+                        })}
+                    </div>
+
+
+                </div>
+
 
 
             </div>
