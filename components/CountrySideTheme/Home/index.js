@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-// import BookingForm from '@/components/Utils/BookingForm'
-// import Modal from '../Modals/Modal';
 import Header from '../Header';
 import BookingForm from '@/components/Utils/BookingForm';
 
